@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Serve",
+            "detail": "jekyll serve",
+            "type": "shell",
+            "command": "bundler",
+            "args": [
+                "exec",
+                "jekyll",
+                "serve",
+                "--incremental"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

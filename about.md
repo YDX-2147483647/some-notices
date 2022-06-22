@@ -1,15 +1,17 @@
 ---
 title: 关于及文档
-layout: default
+layout: home
+permalink: /about/
 ---
 
 这是“一些通知”的第二个版本，上一版本使用[有道云笔记](https://note.youdao.com/s/UIxMRZUH)。
 
-## `notices`的变量
+## 通知（`notices`）
 
 ↓例子。
 
 ```yaml
+# 2022-05-digital-ex.md
 title: “数字电路”硬件实验
 description: 请妥善保存开发板
 updated_on:
@@ -22,6 +24,14 @@ updated_on:
   - 2022-05-28
 status: active
 ```
+
+### 文件名
+
+```
+YYYY-DD-:simple_title
+```
+
+### 变量
 
 - `title`
 

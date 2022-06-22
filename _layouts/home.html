@@ -3,3 +3,10 @@ layout: default
 ---
 
 {% include anchor_headings.html html=content anchorBody="#" anchorClass="heading-anchor" %}
+
+<nav>
+    <ul>
+        <li><a href="{{ '/' | relative_url }}">所有通知</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">关于</a></li>
+    </ul>
+</nav>

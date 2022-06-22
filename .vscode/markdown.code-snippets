@@ -1,0 +1,11 @@
+{
+	"Remark": {
+		"scope": "markdown",
+		"prefix": ".remark",
+		"body": [
+			"<aside class='remark'>",
+			"\t<p>$0</p>",
+			"</aside>"
+		]
+	},
+}
