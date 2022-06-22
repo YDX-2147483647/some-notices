@@ -39,6 +39,8 @@ YYYY-DD-:simple_title
 
   一句话更新。
 
+  可无。
+
 - `status`
   
   这则通知当前的状态。

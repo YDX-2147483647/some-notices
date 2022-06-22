@@ -1,5 +1,6 @@
-- title: 所有通知
+- title: 当前通知
   url: /
-
+- title: 所有通知（包括归档）
+  url: /all/
 - title: 关于及文档
   url: /about/

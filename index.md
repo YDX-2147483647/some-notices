@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 所有通知
+title: 当前通知
 ---
 
 {% assign notices = site.notices | where: 'status', 'active' %}
