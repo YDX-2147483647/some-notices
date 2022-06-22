@@ -11,8 +11,8 @@ title: 当前通知
     {% endfor %}
     {% endcapture %}
 
-    {% assign latest_update_date = all_latest_update_dates_str | split: ',' | sort | last | strip %}
-    <p>最后更新于<time datetime="{{ latest_update_date }}">{{ latest_update_date | date: "%Y年%m月%d日" }}</time>。</p>
+    {% assign all_last_updated_on = all_latest_update_dates_str | split: ',' | sort | last | strip %}
+    <p>最后更新于<time datetime="{{ all_last_updated_on }}">{{ all_last_updated_on | date: "%Y年%m月%d日" }}</time>。</p>
 </aside>
 
 {% assign notices = site.notices | where: 'status', 'active' %}
@@ -20,7 +20,19 @@ title: 当前通知
 <!-- Table of Content -->
 
 {% for notice in notices %}
-- [{{ notice.title }}](#{{ notice.title | slugify }}){% if notice.description %}：{{ notice.description }}{% endif %}
+{% assign last_updated_on = notice.updated_on | last %}
+{% assign delta = last_updated_on | compare_date: all_last_updated_on %}
+{% capture row %}
+    [{{ notice.title }}](#{{ notice.title | slugify }}){% if notice.description %}：{{ notice.description }}{% endif %}——<time datetime="{{ last_updated_on }}">{{ last_updated_on | date: "%Y年%m月%d日" }}</time>
+{% endcapture %}
+{% assign row = row | strip %}
+
+{% if delta > -7 %}
+- **{{ row }}**
+{% else %}
+- {{ row }}
+{% endif %}
+
 {% endfor %}
 
 <!-- Main Content -->
