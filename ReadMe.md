@@ -2,15 +2,11 @@
 
 ## 部署
 
-> `~/.ssh/config`中已配置好`SomeNotices`。
+> 要求`~/.ssh/config`中已配置好`SomeNotices`。
 
-```shell
-scp -r ./_site/* SomeNotices:/var/www/html/
-```
+<kbd>Ctrl</kbd>+<kbd>P</kbd>，`task Deploy`。
 
 `SomeNotices:/etc/nginx/conf.d/some-notices.conf`如下。
-
-> 更多命令请见`.vscode/tasks.json`。
 
 ```properties
 server {
@@ -22,10 +18,11 @@ server {
   location /some-notices {
     alias /var/www/html/;
     index index.html;
-    autoindex on;
   }
 
-  error_page 404 /404.html;
+  error_page 404 /some-notices/404.html;
+
+  rewrite ^/$ /some-notices permanent;
 }
 ```
 

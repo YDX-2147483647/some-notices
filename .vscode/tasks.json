@@ -23,7 +23,7 @@
         },
         {
             "label": "Build",
-            "detail": "jekyll build",
+            "detail": "jekyll build (production)",
             "type": "shell",
             "command": "bundler",
             "args": [
@@ -39,7 +39,7 @@
             },
             "problemMatcher": [],
             "group": {
-                "kind": "build",
+                "kind": "build"
             }
         },
         {
@@ -57,7 +57,23 @@
             },
             "problemMatcher": [],
             "group": {
-                "kind": "build",
+                "kind": "build"
+            }
+        },
+        {
+            "label": "Clear remote files",
+            "detail": "remove /var/www/html/* on SomeNotices",
+            "type": "shell",
+            "command": "ssh",
+            "args": [
+                "SomeNotices",
+                "rm",
+                "-rf",
+                "/var/www/html/*"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
             }
         },
         {
@@ -71,7 +87,25 @@
                 "-s",
                 "reload"
             ],
-            "problemMatcher": []
-        }
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "Deploy",
+            "detail": "All in one deployment",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build",
+                "Clear remote files",
+                "Upload",
+                "Reload server"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            }
+        },
     ]
 }
