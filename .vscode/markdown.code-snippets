@@ -8,4 +8,18 @@
 			"</aside>"
 		]
 	},
+	"Front Matter for Notices": {
+		"scope": "markdown",
+		"prefix": "---",
+		"body": [
+			"---",
+			"title: $1",
+			"status: ${2:active}",
+			"updated_on:",
+			"\t- $3",
+			"---",
+			"",
+			"$0"
+		]
+	},
 }
