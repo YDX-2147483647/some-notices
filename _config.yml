@@ -1,0 +1,29 @@
+# Site Settings
+
+title: 一些通知
+description: 一些通知。
+baseurl: /some-notices
+url: "" # todo the base hostname & protocol
+
+lang: zh-CN
+
+collections:
+  notices:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "notices"
+    values:
+      layout: notices
+      permalink: /:name/
+
+# Build Settings
+
+theme: jekyll-theme-cayman
+github:
+  is_project_page: false
+plugins:
+  - jekyll-feed
+  - jekyll-target-blank

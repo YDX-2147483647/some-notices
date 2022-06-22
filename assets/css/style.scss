@@ -1,0 +1,87 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+aside,
+details {
+    border-left: solid 0.3rem;
+    padding: 0 1rem;
+    color: #819198;
+
+    margin: 1em 0;
+}
+
+aside {
+    &.remark {
+        background-color: #f6ffec80;
+        border-color: greenyellow;
+
+        &::before {
+            content: "ⓘ";
+        }
+    }
+}
+
+details {
+    background-color: #eeeeee80;
+    border-color: #819198;
+
+    & > summary:first-of-type {
+        // fix #page-themes/cayman#147
+        display: list-item;
+    }
+
+    summary + p {
+        margin-top: 0;
+    }
+}
+
+.footnotes {
+    margin-top: 2em;
+    border-top: 0.1em solid lightgray;
+    padding-top: 0.5em;
+}
+
+main p,
+main li {
+    font-family: serif;
+}
+
+:where(main, aside, figure, details, blockquote, article) > p {
+    text-indent: 2em;
+}
+
+blockquote footer {
+    text-align: right;
+}
+
+a[target="_blank"]::after {
+    content: "🡭";
+    // font-variant-position: super;
+    vertical-align: super;
+    font-size: x-small;
+}
+
+nav {
+    margin-top: 2em;
+    border-top: 0.1em solid gray;
+    padding: 1em;
+
+    display: flex;
+    & > ul {
+        margin: auto;
+    }
+}
+
+h2 {
+    & > a:first-child:not(:hover) {
+        color: inherit;
+        border-bottom: .1em dotted lightgray;
+    }
+
+    & > a.heading-anchor {
+        font-size: smaller;
+        color: gray;
+    }
+}
