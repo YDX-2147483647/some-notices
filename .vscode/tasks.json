@@ -20,6 +20,58 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Build",
+            "detail": "jekyll build",
+            "type": "shell",
+            "command": "bundler",
+            "args": [
+                "exec",
+                "jekyll",
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}",
+                "env": {
+                    "JEKYLL_ENV": "production"
+                }
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+            }
+        },
+        {
+            "label": "Upload",
+            "detail": "Send _site/ to SomeNotices.",
+            "type": "shell",
+            "command": "scp",
+            "args": [
+                "-r",
+                "./_site/*",
+                "SomeNotices:/var/www/html/"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+            }
+        },
+        {
+            "label": "Reload server",
+            "detail": "nginx -s reload on SomeNotices",
+            "type": "shell",
+            "command": "ssh",
+            "args": [
+                "SomeNotices",
+                "nginx",
+                "-s",
+                "reload"
+            ],
+            "problemMatcher": []
         }
     ]
 }

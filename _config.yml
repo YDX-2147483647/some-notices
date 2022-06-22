@@ -2,8 +2,8 @@
 
 title: 一些通知
 description: 一些通知。
+url: "http://139.224.63.88"
 baseurl: /some-notices
-url: "" # todo the base hostname & protocol
 
 lang: zh-CN
 
@@ -27,3 +27,6 @@ github:
 plugins:
   - jekyll-feed
   - jekyll-target-blank
+
+exclude:
+  - ReadMe.md

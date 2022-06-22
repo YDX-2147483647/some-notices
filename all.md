@@ -1,6 +1,7 @@
 ---
 layout: home
 title: 所有通知
+permalink: /all/
 ---
 
 {% assign notices = site.notices %}
