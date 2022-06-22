@@ -6,7 +6,12 @@ layout: default
 
 <nav>
     <ul>
-        <li><a href="{{ '/' | relative_url }}">所有通知↩</a></li>
-        <li><a href="{{ '/about/' | relative_url }}">关于</a></li>
-    </ul>
+        {% for item in site.data.toc %}
+            {% if item.url == '/' %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}↩</a></li>
+            {% else %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+     </ul>
 </nav>
