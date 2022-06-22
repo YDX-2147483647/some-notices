@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<p>
+    <small>
+        更新于{% for date in page.updated_on %}<time datetime="{{ date }}">{{ date | date: "%Y年%m月%d日" }}</time>{% if forloop.last == false %}、{% endif %}{% endfor %}。
+    </small>
+</p>
+
 {{ content }}
 
 <nav>

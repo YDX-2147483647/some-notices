@@ -16,6 +16,7 @@ gem "jekyll-theme-cayman", "~> 0.2"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-target-blank", "~> 2.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -30,5 +31,3 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Ruby 3.0 no longer comes with WEBrick
 gem "webrick", "~> 1.7"
-
-gem "jekyll-target-blank", "~> 2.0"
