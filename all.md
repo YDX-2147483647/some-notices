@@ -9,6 +9,6 @@ permalink: /all/
 {% for notice in notices %}
 - [{{ notice.title }}]({{ notice.url | relative_url }}){% if notice.description %}：{{ notice.description }}{% endif %}
 
-  {{ notice.status }}，<time datetime="{{ notice.updated_on | last }}">{{ notice.updated_on | last | date: "%Y年%m月%d日" }}</time>
+  {% include status.html status=notice.status %}，<time datetime="{{ notice.updated_on | last }}">{{ notice.updated_on | last | date: "%Y年%m月%d日" }}</time>
 
 {% endfor %}

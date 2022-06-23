@@ -27,7 +27,7 @@ permalink: /recent/
 {% for notice in recent_notices %}
 - [{{ notice.title }}](#{{ notice.title | slugify }}){% if notice.description %}：{{ notice.description }}{% endif %}
 
-  {{ notice.status }}，<time datetime="{{ notice.updated_on | last }}">{{ notice.updated_on | last | date: "%Y年%m月%d日" }}</time>
+  {% include status.html status=notice.status %}，<time datetime="{{ notice.updated_on | last }}">{{ notice.updated_on | last | date: "%Y年%m月%d日" }}</time>
 
 {% endfor %}
 
@@ -35,11 +35,11 @@ permalink: /recent/
 
 {% for notice in recent_notices %}
 
-## [{{ notice.title }}]({{ notice.url | relative_url }}){% if notice.description %}：{{ notice.description }}{% endif %}（{{ notice.status }}）
+## [{{ notice.title }}]({{ notice.url | relative_url }}){% if notice.description %}：{{ notice.description }}{% endif %}
 {:id="{{ notice.title | slugify }}"}
 
 <p>
-    <small>最后更新于<time datetime="{{ notice.updated_on | last }}">{{ notice.updated_on | last | date: "%Y年%m月%d日" }}</time>。</small>
+    <small>{% include status.html status=notice.status %}。最后更新于<time datetime="{{ notice.updated_on | last }}">{{ notice.updated_on | last | date: "%Y年%m月%d日" }}</time>。</small>
 </p>
 
 {{ notice.content | markdownify }}

@@ -1,0 +1,8 @@
+{% capture status_workspace %}
+{% comment %}
+将 status 转换为可读文本。
+{% endcomment %}
+
+{% assign target = site.data.status | find: 'status', include.status %}
+
+{% endcapture %}{% assign status_workspace = nil %}<span class='status' title='{{ target.status }}'>{{ target.display }}</span>{% assign target = nil %}
