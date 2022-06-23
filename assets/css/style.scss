@@ -52,12 +52,16 @@ main li {
     text-indent: 2em;
 }
 
-blockquote footer {
-    text-align: right;
+blockquote {
+    margin-right: 0; // fix
+
+    & > footer {
+        text-align: right;
+    }
 }
 
 a[target="_blank"]::after {
-    content: "🡭";
+    content: "🔗";
     // font-variant-position: super;
     vertical-align: super;
     font-size: x-small;
@@ -77,7 +81,7 @@ nav {
 h2 {
     & > a:first-child:not(:hover) {
         color: inherit;
-        border-bottom: .1em dotted lightgray;
+        border-bottom: 0.1em dotted lightgray;
     }
 
     & > a.heading-anchor {
