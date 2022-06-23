@@ -3,6 +3,14 @@
 
 @import "{{ site.theme }}";
 
+strong {
+    text-decoration: underline;
+}
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
 aside,
 details {
     border-left: solid 0.3rem;
@@ -94,7 +102,7 @@ h2 {
     margin-bottom: 1em;
 
     & > p {
-        margin-bottom: 0;
+        margin-bottom: 0.5em;
         margin-top: 0;
     }
 }
