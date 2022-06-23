@@ -2,5 +2,7 @@
   url: /
 - title: 所有通知（包括归档）
   url: /all/
+- title: 半月内更新过的通知
+  url: /recent/
 - title: 关于
   url: /about/
