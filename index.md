@@ -4,18 +4,13 @@ title: 当前通知
 ---
 
 <aside class='remark'>
-    {% capture all_latest_update_dates_str %}
-    {% for notice in site.notices %}
-        {{ notice.updated_on | last }}
-        {% if forloop.last == false %},{% endif %}
-    {% endfor %}
-    {% endcapture %}
-
-    {% assign all_last_updated_on = all_latest_update_dates_str | split: ',' | sort | last | strip %}
+    {% assign all_latest_notice = site.notices | sort_notices | last %}
+    {% assign all_last_updated_on = all_latest_notice.updated_on | last %}
     <p>最后更新于<time datetime="{{ all_last_updated_on }}">{{ all_last_updated_on | date: "%Y年%m月%d日" }}</time>。</p>
+    {% assign all_latest_notice = nil %}
 </aside>
 
-{% assign notices = site.notices | where: 'status', 'active' %}
+{% assign notices = site.notices | where: 'status', 'active' | sort_notices | reverse %}
 
 <!-- Table of Content -->
 
