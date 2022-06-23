@@ -15,21 +15,19 @@ title: 当前通知
 <!-- Table of Content -->
 
 {% for notice in notices %}
+- [{{ notice.title }}](#{{ notice.title | slugify }}){% if notice.description %}：{{ notice.description }}{% endif %}
+
 {% assign last_updated_on = notice.updated_on | last %}
 {% assign delta = last_updated_on | compare_date: all_last_updated_on %}
-{% capture row_heading %}
-    [{{ notice.title }}](#{{ notice.title | slugify }}){% if notice.description %}：{{ notice.description }}{% endif %}
-{% endcapture %}
-{% assign row_heading = row_heading | strip %}
 {% capture row_time %}
 <time datetime="{{ last_updated_on }}">{{ last_updated_on | date: "%Y年%m月%d日" }}</time>
 {% endcapture %}
 {% assign row_time = row_time | strip %}
 
 {% if delta > -7 %}
-- {{ row_heading }}——**<u>{{ row_time }}</u>**
+  **<u>{{ row_time }}</u>**
 {% else %}
-- {{ row_heading }}——{{ row_time }}
+  {{ row_time }}
 {% endif %}
 
 {% endfor %}

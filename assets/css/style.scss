@@ -89,3 +89,12 @@ h2 {
         color: gray;
     }
 }
+
+.main-content li {
+    margin-bottom: 1em;
+
+    & > p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
