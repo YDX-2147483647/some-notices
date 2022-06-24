@@ -97,7 +97,8 @@
             "dependsOrder": "sequence",
             "dependsOn": [
                 "Build",
-                "Clear remote files",
+                // Upload 只会用新文件覆盖旧文件，不会单独删除旧文件。
+                // "Clear remote files",
                 "Upload",
                 "Reload server"
             ],
