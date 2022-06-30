@@ -30,3 +30,4 @@ plugins:
 
 exclude:
   - ReadMe.md
+  - scripts/

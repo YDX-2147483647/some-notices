@@ -72,3 +72,11 @@ YYYY-DD-:simple_title
   更新日期。
 
   `string[]`，日期按 ISO 8601 格式（`YYYY-MM-DD`）。
+
+- `due`
+
+  截止日期。
+
+  `string`，日期按 ISO 8601 格式（`YYYY-MM-DD`）。
+
+  可无。

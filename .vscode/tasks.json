@@ -96,6 +96,7 @@
             "detail": "All in one deployment",
             "dependsOrder": "sequence",
             "dependsOn": [
+                "Archive notices",
                 "Build",
                 // Upload 只会用新文件覆盖旧文件，不会单独删除旧文件。
                 // "Clear remote files",
@@ -107,6 +108,17 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Archive notices",
+            "detail": "Archive outdated but active notices.",
+            "type": "shell",
+            "command": "./scripts/archive_notices.ps1",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "problemMatcher": [],
         },
     ]
 }
