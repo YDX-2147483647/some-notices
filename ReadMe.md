@@ -11,7 +11,7 @@
 ```properties
 server {
   listen 80;
-  server_name 139.224.63.88;
+  server_name haobit.top;
   access_log logs/access.log;
   error_log logs/error.log error;
   
@@ -25,6 +25,15 @@ server {
   rewrite ^/$ /some-notices permanent;
 }
 ```
+
+> `SomeNoticesOld:/etc/nginx/conf.d/some-notices.conf`：
+> 
+> ```properties
+> server {
+>   # …
+>   rewrite ^/some-notices/(.*)$ https://haobit.top/some-notices/$1 permanent;
+> }
+> ```
 
 ## 通知（`notices`）
 
