@@ -2,11 +2,8 @@
 layout: default
 ---
 
-<p>
-    <small>
-        {% include status.html status=page.status %}。更新于{% for date in page.updated_on %}<time datetime="{{ date }}">{{ date | date: "%Y年%m月%d日" }}</time>{% if forloop.last == false %}、{% endif %}{% endfor %}。
-    </small>
-</p>
+<p><small>{% include status.html status=page.status %}。{% if page.source %}信息来源：{{ page.source }}。{% endif %}</small></p>
+<p><small>更新于{% for date in page.updated_on %}<time datetime="{{ date }}">{{ date | date: "%Y年%m月%d日" }}</time>{% if forloop.last == false %}、{% endif %}{% endfor %}。</small></p>
 
 {{ content }}
 

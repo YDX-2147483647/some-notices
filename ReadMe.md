@@ -89,3 +89,9 @@ YYYY-DD-:simple_title
   `string`，日期按 ISO 8601 格式（`YYYY-MM-DD`）。
 
   可无。
+
+- `source`
+
+  信息来源。
+
+  可无。
