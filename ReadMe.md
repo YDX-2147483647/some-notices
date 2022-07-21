@@ -86,7 +86,7 @@ YYYY-DD-:simple_title
 
   截止日期。
 
-  `string`，日期按 ISO 8601 格式（`YYYY-MM-DD`）。
+  `string | number`，ISO 8601 格式（`YYYY-MM-DD`）日期或最后更新日期后的天数（一般为正数）。
 
   可无。
 

@@ -1,5 +1,5 @@
 from argparse import ArgumentParser
-from datetime import date
+from datetime import date, timedelta
 from os import listdir
 from os.path import join
 
@@ -20,8 +20,14 @@ def get_outdated_notices(root: str, before: date) -> list[str]:
 
         assert 'status' in metadata
         if metadata['status'] == 'active' and 'due' in metadata:
-            due: date = metadata['due']
-            assert isinstance(due, date)
+            due: date | int | float = metadata['due']
+            if isinstance(due, date):
+                pass
+            else:
+                last_update: date = metadata['updated_on'][0]
+                assert isinstance(last_update, date)
+                due = last_update + timedelta(days=due)
+
             if due < before:
                 outdated.append(filepath)
 
