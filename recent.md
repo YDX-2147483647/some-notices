@@ -15,7 +15,7 @@ permalink: /recent/
 
 {% assign recent_notices = '' | split: ',' %}
 {% for notice in notices %}
-    {% assign delta = notice.updated_on | last | compare_date %}
+    {% assign delta = notice.updated_on | last | compare_date: all_last_updated_on %}
     {% if delta < -15 %}
         {% break %}
     {% endif %}
