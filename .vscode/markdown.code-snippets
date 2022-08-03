@@ -14,7 +14,8 @@
 		"body": [
 			"---",
 			"title: $1",
-			"status: ${2:active}",
+			"source: $2",
+			"status: ${3:active}",
 			"updated_on:",
 			"\t- $3",
 			"---",
