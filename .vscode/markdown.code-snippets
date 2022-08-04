@@ -17,7 +17,7 @@
 			"source: $2",
 			"status: ${3:active}",
 			"updated_on:",
-			"\t- $3",
+			"\t- $4",
 			"---",
 			"",
 			"$0"
