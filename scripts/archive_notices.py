@@ -24,7 +24,7 @@ def get_outdated_notices(root: str, before: date) -> list[str]:
             if isinstance(due, date):
                 pass
             else:
-                last_update: date = metadata['updated_on'][0]
+                last_update: date = max(metadata['updated_on'])
                 assert isinstance(last_update, date)
                 due = last_update + timedelta(days=due)
 
