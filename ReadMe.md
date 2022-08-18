@@ -4,6 +4,12 @@
 
 > 要求`~/.ssh/config`中已配置好`SomeNotices`。
 
+> `Deploy`任务需要 rsync。若不便使用，可用“删除再上传”替代，具体方法见`tasks.json`中这一任务的注释。
+>
+> Seunghyun Chae, [*How to use rsync on Git Bash*](https://shchae7.medium.com/how-to-use-rsync-on-git-bash-6c6bba6a03ca).
+>
+> [How do I use spaces in the Command Prompt?](https://stackoverflow.com/a/19860015/17975124), ghbarratt's first answer.
+
 <kbd>Ctrl</kbd>+<kbd>P</kbd>，`task Deploy`。
 
 `SomeNotices:/etc/nginx/conf.d/some-notices.conf`如下。

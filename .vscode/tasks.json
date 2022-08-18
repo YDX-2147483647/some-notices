@@ -76,6 +76,24 @@
             }
         },
         {
+            "label": "Sync",
+            "detail": "Sync _site/ to SomeNotices.",
+            "type": "shell",
+            "command":"rsync",
+            "args": [
+                "--archive",
+                "--verbose",
+                "--human-readable",
+                "--delete",
+                "_site/",
+                "SomeNotices:/var/www/html/"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
             "label": "Reload server",
             "detail": "nginx -s reload on SomeNotices",
             "type": "shell",
@@ -98,9 +116,11 @@
             "dependsOn": [
                 "Archive notices",
                 "Build",
+                // For those who cannot rsync:
                 // Upload 只会用新文件覆盖旧文件，不会单独删除旧文件。
                 // "Clear remote files",
-                "Upload",
+                // "Upload",
+                "Sync",
                 "Reload server"
             ],
             "problemMatcher": [],
