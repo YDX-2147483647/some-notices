@@ -82,6 +82,7 @@
             "command":"rsync",
             "args": [
                 "--archive",
+                "--checksum",
                 "--verbose",
                 "--human-readable",
                 "--delete",
