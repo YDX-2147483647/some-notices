@@ -114,3 +114,10 @@ h2 {
         margin-top: 0;
     }
 }
+
+table {
+    th,
+    tr:nth-child(2n) {
+        background-color: #e4e4e45c;
+    }
+}
