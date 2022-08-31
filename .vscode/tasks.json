@@ -21,108 +21,12 @@
             }
         },
         {
-            "label": "Build",
-            "detail": "jekyll build (production)",
-            "type": "shell",
-            "command": "bundler",
-            "args": [
-                "exec",
-                "jekyll",
-                "build"
-            ],
-            "options": {
-                "cwd": "${workspaceRoot}",
-                "env": {
-                    "JEKYLL_ENV": "production"
-                }
-            },
-            "problemMatcher": [],
-            "group": {
-                "kind": "build"
-            }
-        },
-        {
-            "label": "Upload",
-            "detail": "Send _site/ to SomeNotices.",
-            "type": "shell",
-            "command": "scp",
-            "args": [
-                "-r",
-                "./_site/*",
-                "SomeNotices:/var/www/html/"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "problemMatcher": [],
-            "group": {
-                "kind": "build"
-            }
-        },
-        {
-            "label": "Clear remote files",
-            "detail": "remove /var/www/html/* on SomeNotices",
-            "type": "shell",
-            "command": "ssh",
-            "args": [
-                "SomeNotices",
-                "rm",
-                "-rf",
-                "/var/www/html/*"
-            ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build"
-            }
-        },
-        {
-            "label": "Sync",
-            "detail": "Sync _site/ to SomeNotices.",
-            "type": "shell",
-            "command":"rsync",
-            "args": [
-                "--archive",
-                "--checksum",
-                "--verbose",
-                "--human-readable",
-                "--delete",
-                "_site/",
-                "SomeNotices:/var/www/html/"
-            ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build"
-            }
-        },
-        {
-            "label": "Reload server",
-            "detail": "nginx -s reload on SomeNotices",
-            "type": "shell",
-            "command": "ssh",
-            "args": [
-                "SomeNotices",
-                "nginx",
-                "-s",
-                "reload"
-            ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build"
-            }
-        },
-        {
             "label": "Deploy",
             "detail": "All in one deployment",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "Archive notices",
-                "Build",
-                // For those who cannot rsync:
-                // Upload 只会用新文件覆盖旧文件，不会单独删除旧文件。
-                // "Clear remote files",
-                // "Upload",
-                "Sync",
-                "Reload server"
+                "Deploy only"
             ],
             "problemMatcher": [],
             "group": {
@@ -135,6 +39,16 @@
             "detail": "Archive outdated but active notices.",
             "type": "shell",
             "command": "./scripts/archive_notices.ps1",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}",
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Deploy only",
+            "type": "shell",
+            "command": "./scripts/deploy.ps1",
             "args": [],
             "options": {
                 "cwd": "${workspaceFolder}",
