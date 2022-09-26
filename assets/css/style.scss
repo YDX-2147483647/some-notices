@@ -75,6 +75,9 @@ a {
     &[href^="mailto:"]::after {
         content: "📧";
     }
+    &[href^="tel:"]::after {
+        content: "📞";
+    }
 
     &::after {
         // font-variant-position: super;
