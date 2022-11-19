@@ -3,6 +3,7 @@
 !/_notices/.gitkeep
 
 /scripts/env/
+/.env
 
 # Jekyll
 _site

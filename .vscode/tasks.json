@@ -2,19 +2,12 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Serve",
-            "detail": "jekyll serve",
+            "label": "Jekyll Serve",
             "type": "shell",
-            "command": "bundler",
+            "command": "just",
             "args": [
-                "exec",
-                "jekyll",
-                "serve",
-                "--incremental"
+                "serve"
             ],
-            "options": {
-                "cwd": "${workspaceRoot}"
-            },
             "problemMatcher": [],
             "group": {
                 "kind": "test",
@@ -22,38 +15,16 @@
         },
         {
             "label": "Deploy",
-            "detail": "All in one deployment",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "Archive notices",
-                "Deploy only"
+            "type": "shell",
+            "command": "just",
+            "args": [
+                "deploy"
             ],
             "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        },
-        {
-            "label": "Archive notices",
-            "detail": "Archive outdated but active notices.",
-            "type": "shell",
-            "command": "./scripts/archive_notices.ps1",
-            "args": [],
-            "options": {
-                "cwd": "${workspaceFolder}",
-            },
-            "problemMatcher": [],
-        },
-        {
-            "label": "Deploy only",
-            "type": "shell",
-            "command": "./scripts/deploy.ps1",
-            "args": [],
-            "options": {
-                "cwd": "${workspaceFolder}",
-            },
-            "problemMatcher": [],
         },
     ]
 }
