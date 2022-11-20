@@ -81,7 +81,7 @@ status: active
 ### 文件名
 
 ```
-YYYY-DD-:simple_title
+YYYY-MM-:simple_title
 ```
 
 ### 变量

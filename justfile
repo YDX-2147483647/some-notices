@@ -40,3 +40,19 @@ deploy-only $JEKYLL_ENV="production":
 
 # Archive notices and deploy the site
 deploy: archive deploy-only
+
+
+# Create and edit a new notice
+new title:
+    #!pwsh
+    $month = Get-Date -Format 'yyyy-MM'
+    $filepath = "./_notices/$month-{{ title }}.md"
+    Write-Host "Creating “$filepath” …"
+    New-Item $filepath
+
+    if ($?) {
+        $date = Get-Date -Format 'yyyy-MM-dd'
+        "---`ntitle: `nsource: `nstatus: active`nupdated_on:`n  - $date`n---" > $filepath
+
+        & $filepath
+    }
