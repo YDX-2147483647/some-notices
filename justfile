@@ -56,3 +56,9 @@ new title:
 
         & $filepath
     }
+
+
+# Ripgrep in the notices
+rg pattern *options:
+    #!pwsh
+    rg "{{ pattern }}" ./_notices/ --no-ignore {{ options }}
