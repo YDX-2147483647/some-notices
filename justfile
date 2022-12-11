@@ -60,5 +60,8 @@ new title:
 
 # Ripgrep in the notices
 rg pattern *options:
-    #!pwsh
     rg "{{ pattern }}" ./_notices/ --no-ignore {{ options }}
+
+# Find files in the notices
+fd pattern *options:
+    fd "{{ pattern }}" ./_notices/ --no-ignore-vcs {{ options }}
