@@ -1,4 +1,3 @@
-set windows-shell := ["pwsh", "-NoLogo", "-Command"]
 set dotenv-load
 
 python := env_var_or_default('PYTHON', 'python')
@@ -9,7 +8,7 @@ remote_dst := remote_host + ':' + remote_path
 sync := if env_var_or_default('USE_SCP', 'false') == 'true' {
     'ssh ' + remote_host + ' rm -rf ' + remote_path / '*' + ' && scp -r ./_site/* ' + remote_dst
 } else {
-    'rsync --recursive --checksum --human-readable --delete _site/ ' + remote_dst + ' --info=progress2'
+    env_var_or_default('RSYNC', 'rsync') + ' --recursive --checksum --human-readable --delete _site/ ' + remote_dst + ' --info=progress2'
 }
 
 
