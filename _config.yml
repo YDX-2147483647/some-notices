@@ -28,6 +28,11 @@ plugins:
   - jekyll-feed
   - jekyll-target-blank
 
+feed:
+  collections:
+    notices:
+      path: "/feed.atom"
+
 exclude:
   - ReadMe.md
   - scripts/
