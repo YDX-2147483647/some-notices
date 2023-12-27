@@ -32,6 +32,7 @@ feed:
   collections:
     notices:
       path: "/feed.atom"
+author: Y.D.X.  # Used by jekyll-feed
 
 exclude:
   - ReadMe.md
