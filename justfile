@@ -53,7 +53,7 @@ new title:
         $date = Get-Date -Format 'yyyy-MM-dd'
         "---`ntitle: `nsource: `nstatus: active`nupdated_on:`n  - $date`n---" > $filepath
 
-        & $filepath
+        nvim $filepath
     }
 
 
