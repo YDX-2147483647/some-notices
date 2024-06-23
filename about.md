@@ -15,3 +15,5 @@ permalink: /about/
 4. <time datetime='2022-10-17'>2022年10月17日</time>公开了[源代码仓库](https://github.com/YDX-2147483647/some-notices)。注意那里没有实际通知：通知更新频繁，故从版本控制中忽略。
 
 5. <time datetime='2023-12-27'>2023年12月27日</time>正式添加了 [RSS 源](https://haobit.top/some-notices/feed.atom)，不过未删除此前[空的源](https://haobit.top/some-notices/feed.xml)。
+
+6. <time datetime='2024-06-23'>2024年6月23日</time>发布了[🧾领取CET证书]({% link _notices/2024-06-CET-certificate.md %})，大约是最后一则通知。
